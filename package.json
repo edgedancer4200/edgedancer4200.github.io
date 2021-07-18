@@ -1,9 +1,9 @@
 {
-  "name": "portfolio-2021",
+  "name": "portfolio",
   "version": "1.0.0",
   "private": true,
   "description": "Personal portfolio",
-  "author": "andxras",
+  "author": "Carlos Barrios <cl.bs.xv@gmail.com>",
   "keywords": [
     "gatsby"
   ],
@@ -11,6 +11,7 @@
     "dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -22,6 +23,7 @@
     "gatsby-plugin-gatsby-cloud": "^2.9.1",
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-styled-components": "^4.9.0",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
