@@ -4,15 +4,21 @@ import emailjs from 'emailjs-com';
 // styles
 import { Section, Form, EmailField, MessageField, BtnSubmit } from './styles';
 
+const dflFields = {
+    email: '',
+    message: ''
+}
 
 const Contact: React.FC = () => {
     const [emailSent, setEmailSent] = useState<boolean>(false);
-    const [fields, setFields] = useState<any>({
-		email: '',
-		message: ''
-	});
+    const [fields, setFields] = useState(dflFields);
 
-    useEffect(() => { /* dynamic module import */
+    useEffect(() => {
+        if (emailSent) setFields(dflFields);
+    }, [emailSent]);
+
+    // utilities module dynamically imported when required
+    useEffect(() => {
         if (fields.message)
             import('./utilities').then(_module => _module.handletextareaInput());
     }, [fields.message]);

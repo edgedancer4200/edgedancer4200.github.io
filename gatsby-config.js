@@ -11,7 +11,6 @@ module.exports = {
     title: "Carlos Barrios, developer"
   },
   plugins: [
-    "gatsby-plugin-typescript",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-react-helmet",

@@ -17,7 +17,6 @@
     ],
     "target": "es2015"
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules/*", "public/*"],
-  "outDir": "public"
+  "include": ["**/*.ts", "**/*.tsx", "gatsby-node.js"],
+  "exclude": ["node_modules/*", "public/*"]
 }
