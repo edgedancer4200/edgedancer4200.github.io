@@ -10,7 +10,7 @@ import './styles.css';
 // TODO: mover a un cms
 import { projects } from './data';
 
-const ProjectsSection = () => {
+const ProjectsSection: React.FC = () => {
 
     const breakpointColumns = {
         default: 2,

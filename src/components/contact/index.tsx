@@ -4,9 +4,10 @@ import emailjs from 'emailjs-com';
 // styles
 import { Section, Form, EmailField, MessageField, BtnSubmit } from './styles';
 
-const Contact = () => {
-    const [emailSent, setEmailSent] = useState(false);
-    const [fields, setFields] = useState({
+
+const Contact: React.FC = () => {
+    const [emailSent, setEmailSent] = useState<boolean>(false);
+    const [fields, setFields] = useState<any>({
 		email: '',
 		message: ''
 	});
@@ -17,16 +18,16 @@ const Contact = () => {
     }, [fields.message]);
 
 
-    const _handleChange = (e) => setFields({ ...fields, [e.target.name]: e.target.value });
+    const _handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setFields({ ...fields, [e.target.name]: e.target.value });
 
 
-    const _handleSubmit = (e) => {
+    const _handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
         e.preventDefault();
 
         setEmailSent(false);
        
         emailjs.send(process.env.SERVICE_ID, process.env.TEMPLATE_ID, fields, process.env.USERID)
-        .then((result) => setEmailSent(true))
+        .then((_: any) => setEmailSent(true))
         .catch(err => console.error(err));
     }
 
@@ -44,7 +45,7 @@ const Contact = () => {
                     placeholder="Your Email Address"
                     value={ fields.email }
                     spellCheck={ false }
-                    onChange={ (e) => _handleChange(e) }
+                    onChange={ (e: React.ChangeEvent<HTMLInputElement>) => _handleChange(e) }
                 />
                 {/* Message */}
                 <MessageField
@@ -53,7 +54,7 @@ const Contact = () => {
                     value={ fields.message }
                     placeholder="Your Message"
                     spellCheck={ false }
-                    onChange={ (e) => _handleChange(e) }
+                    onChange={ (e: React.ChangeEvent<HTMLInputElement>) => _handleChange(e) }
                 >
                 </MessageField>
                 <span id="message_sent" style={{ display: emailSent ? 'block' : 'none', margin: '0 0 2em 1em' }}>

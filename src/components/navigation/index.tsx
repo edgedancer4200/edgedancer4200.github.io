@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { Header, Menu, Logo } from './styles';
 
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
     return (
         <Header>
             <Logo to="/">

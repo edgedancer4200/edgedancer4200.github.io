@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby";
 import { Section } from "./styles"
 
-const Showcase = () => {
+const Showcase: React.FC = () => {
   return (
     <Section id="showcase">
         <p>

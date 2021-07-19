@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { Link as GatsbyLink } from "gatsby";
+
 const text = '#333333';
 const bg = '#F8F8F8';
-export const Header = styled.span `
+
+export const Header = styled.span`
     width: 100%;
     height: 4em;
     padding: 1em 0 1em 0;
@@ -12,8 +14,10 @@ export const Header = styled.span `
     position: absolute;
     background-color: ${bg};
 `;
+
+
 // https://stackoverflow.com/questions/49639031/styled-components-with-gatsby-link-anchor-tag-css-coloring
-export const Logo = styled(GatsbyLink) `
+export const Logo = styled(GatsbyLink)`
     font-size: 1.3rem;
     margin-left: 2em;
     text-decoration: None;
@@ -27,7 +31,9 @@ export const Logo = styled(GatsbyLink) `
         margin-top: -5px;
     }
 `;
-export const Menu = styled.ul `
+
+
+export const Menu = styled.ul`
     margin-top: 1em;
     margin-right: 3em;
     padding-left: .8em;

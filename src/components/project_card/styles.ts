@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+
 const bg = '#333333';
-export const Card = styled.div `
+
+export const Card = styled.div`
     position: relative;
     min-height: 300px;
     background-color: ${bg};
@@ -8,7 +10,9 @@ export const Card = styled.div `
     padding: 2em;
     border-radius: 5px;
 `;
-export const CardImg = styled.img `
+
+
+export const CardImg = styled.img`
     position: absolute;
     object-fit: cover;
     top: 0;
@@ -17,7 +21,9 @@ export const CardImg = styled.img `
     height: 100%;
     border-radius: 5px;
 `;
-export const CardLayout = styled.div `
+
+
+export const CardLayout = styled.div`
     position: absolute;
     top: 0;
     left: 0;

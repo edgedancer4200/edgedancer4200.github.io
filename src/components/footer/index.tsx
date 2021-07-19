@@ -2,7 +2,7 @@ import React from "react";
 import { Divisor, Info } from './styles';
 import { Link } from "gatsby";
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <Divisor>
             <Info>

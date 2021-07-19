@@ -2,9 +2,12 @@ import React from 'react';
 import LazyLoad from 'react-lazyload';
 import { Card, CardImg, CardLayout } from './styles';
 
-const ProjectCard = (props) => {
+// interfaces
+// TODO: mover interfaces a otro lugar
+import { ProjectI } from '../projects_section/data';
 
-    const { project } = props;
+
+const ProjectCard: React.FC<{ project: ProjectI }> = ({ project }) => {
 
     return (
         <Card>

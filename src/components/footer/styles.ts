@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+
 const bg = '#F1F1F1';
 const text = '#333333';
-export const Divisor = styled.div `
+
+export const Divisor = styled.div`
     position: relative;
     bottom: 0;
     width: 100%;
@@ -25,6 +27,8 @@ export const Divisor = styled.div `
         font-family: 'Poppins';
     }
 `;
-export const Info = styled.p `
+
+
+export const Info = styled.p`
     color: ${text};
 `;
