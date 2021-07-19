@@ -5,6 +5,7 @@ require("dotenv").config({
 });
 
 module.exports = {
+  pathPrefix: `/`,
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "Carlos Barrios, developer"
