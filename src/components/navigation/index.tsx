@@ -10,7 +10,7 @@ import data from '../../../data.json';
 const Navigation: React.FC = () => {
     return (
         <Header>
-            <Logo to="/">
+            <Logo to="/" aria-label="logo">
                 { data.logo.main }
                 <span>
                     { data.logo.secondary }

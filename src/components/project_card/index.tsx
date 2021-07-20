@@ -21,7 +21,7 @@ const ProjectCard: React.FC<{ project: ProjectI }> = ({ project }) => {
                         {
                             Object.keys(project.links).map((link, idx) => (
                                 <li key={idx}>
-                                    <a href={ project.links[link].url }>
+                                    <a href={ project.links[link].url } aria-label="resource">
                                         { project.links[link].title }
                                     </a>
                                 </li>
