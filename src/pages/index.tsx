@@ -20,7 +20,10 @@ const IndexPage = () => {
 
   return (
     <>
-      <Helmet>
+      <Helmet htmlAttributes={{
+        lang: 'en',
+      }}>
+        <meta charSet="utf-8" />
         <title>
         ॐ Carlos Barrios, developer
         </title>
