@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Device from '../../devices-bpks';
+
 import { Link as GatsbyLink } from "gatsby";
 
 const text = '#333333';
@@ -18,7 +20,7 @@ export const Header = styled.span`
 
 // https://stackoverflow.com/questions/49639031/styled-components-with-gatsby-link-anchor-tag-css-coloring
 export const Logo = styled(GatsbyLink)`
-    font-size: 1.3rem;
+    font-size: .9rem;
     margin-left: 2em;
     text-decoration: None;
     font-weight: 700;
@@ -29,6 +31,10 @@ export const Logo = styled(GatsbyLink)`
     & span {
         display: block;
         margin-top: -5px;
+    }
+
+    @media ${ Device.mobileL } {
+        font-size: 1.3rem;
     }
 `;
 

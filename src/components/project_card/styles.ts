@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Device from '../../devices-bpks';
 
 const bg = '#333333';
 
@@ -39,16 +40,18 @@ export const CardLayout = styled.div`
         & h3 {
             font-size: 1.4rem !important;
             text-transform: uppercase;
+            padding-bottom: 0 !important;
         }
 
         & p {
             font-family: 'Poppins';
+            padding: 0 2em 2em 2em;
         }
 
         & ul {
             list-style-type: none;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
 
             & li {
@@ -60,6 +63,10 @@ export const CardLayout = styled.div`
                     text-decoration: None;
                     color: transparent;
                 }
+            }
+
+            @media ${ Device.mobileM } {
+                flex-direction: row;
             }
         }
     }

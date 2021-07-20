@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
                     Your message has been sent.
                 </span>
                 <BtnSubmit>
-                    send message
+                    send
                 </BtnSubmit>
             </Form>
         </Section>

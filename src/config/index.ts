@@ -1,2 +1,2 @@
-const DOMAIN: string = '//pfl-bo-andxras.herokuapp.com';
+const DOMAIN: string = process.env.BACKOFFICE_URL;
 export const LIST_PRJ: string = DOMAIN + '/projects';

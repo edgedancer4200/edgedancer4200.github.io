@@ -6,7 +6,8 @@ import { default as Layout } from 'react-masonry-css';
 import ProjectCard from '../project_card';
 
 // styles
-import './styles.css';
+import { Section } from './styles';
+import './masonry-styles.css';
 
 // config
 import { LIST_PRJ } from '../../config';
@@ -14,15 +15,16 @@ import { LIST_PRJ } from '../../config';
 // interfaces
 import { ProjectI } from '../../interfaces';
 
+// react-masonry-css params
+const breakpointColumns = {
+    default: 2,
+    1100: 2,
+    700: 2,
+    600: 1
+};
 
 const ProjectsSection: React.FC = () => {
     const [prj, setPrj] = useState<ProjectI[]>([]);
-    const breakpointColumns = {
-        default: 2,
-        1100: 2,
-        700: 2,
-        600: 1
-    };
 
     useEffect(() => {
         fetchPRJ();
@@ -34,7 +36,7 @@ const ProjectsSection: React.FC = () => {
     }
 
     return (
-        <section id="projects">
+        <Section id="projects">
             <h3>
                 a collection of selected work
             </h3>
@@ -47,7 +49,7 @@ const ProjectsSection: React.FC = () => {
                 prj.map((project, idx) => <ProjectCard project={project} key={idx} />)
             }
             </Layout>
-        </section>
+        </Section>
     )
 }
 

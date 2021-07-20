@@ -8,6 +8,7 @@
     "module": "es2020",
     "moduleResolution": "node",
     "noImplicitAny": false,
+    "resolveJsonModule": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "plugins": [

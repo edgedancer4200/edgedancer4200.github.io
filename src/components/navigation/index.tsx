@@ -4,14 +4,16 @@ import { Link } from "gatsby";
 // styles
 import { Header, Menu, Logo } from './styles';
 
+// data
+import data from '../../../data.json';
 
 const Navigation: React.FC = () => {
     return (
         <Header>
             <Logo to="/">
-                Carlos Barrios,
+                { data.logo.main }
                 <span>
-                    Developer
+                    { data.logo.secondary }
                 </span>
             </Logo>
             <Menu>

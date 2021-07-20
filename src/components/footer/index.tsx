@@ -2,15 +2,14 @@ import React from "react";
 import { Divisor, Info } from './styles';
 import { Link } from "gatsby";
 
+// data
+import data from "../../../data.json";
+
 const Footer: React.FC = () => {
     return (
         <Divisor>
-            <Info>
-                Carlos Barrios ©2021
-            </Info>
-            <Info>
-                LAST UPDATED — Jul 17, 2021
-            </Info>
+            <Info>{ data.footer.main }</Info>
+            <Info>{ data.footer.secondary }</Info>
             <Link to="#showcase">
                 back to top
             </Link>

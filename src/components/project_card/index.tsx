@@ -3,8 +3,7 @@ import LazyLoad from 'react-lazyload';
 import { Card, CardImg, CardLayout } from './styles';
 
 // interfaces
-// TODO: mover interfaces a otro lugar
-import { ProjectI } from '../projects_section/data';
+import { ProjectI } from '../../interfaces';
 
 
 const ProjectCard: React.FC<{ project: ProjectI }> = ({ project }) => {
