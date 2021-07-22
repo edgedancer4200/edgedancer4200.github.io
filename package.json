@@ -15,7 +15,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "type-check": "tsc --pretty --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
