@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { Section } from "./styles"
+import { Section } from './styles'
 
 // data
 import data from '../../../data.json'
