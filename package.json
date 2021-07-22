@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "gatsby develop",
+    "start:dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
@@ -17,7 +17,8 @@
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint --ignore-path .gitignore . --ext \".ts,.tsx,.js,.jsx\"",
     "lint:fix": "eslint --ignore-path .gitignore . --ext .ts,.tsx,.js,.jsx --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
@@ -52,7 +53,7 @@
     "prettier": "^2.3.2"
   },
   "lint-staged": {
-    "**/*.{ts, tsx}": "eslint --cache --fix",
-    "**/*.{css,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx}": ["npm run lint:fix", "git add"],
+    "{*.{json,md}}": ["prettier --write", "git add"]
   }
 }

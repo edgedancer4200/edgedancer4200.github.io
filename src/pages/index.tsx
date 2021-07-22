@@ -33,9 +33,6 @@ const IndexPage = () => {
       <ProjectsSection/>
       <Contact/>
       <Footer/>
-
-      <Contact/>
-      <Footer/>
     </>
   )
 }

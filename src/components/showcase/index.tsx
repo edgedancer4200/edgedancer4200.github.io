@@ -15,7 +15,7 @@ const Showcase: React.FC = () => {
           <span style={{ marginTop: '10px' }}>
             Got an interest project in mind?
             <Link to="#contact">
-              Let's talk.
+              Let&apos;s talk.
             </Link>
           </span>
         </p>
