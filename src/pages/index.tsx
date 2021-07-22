@@ -7,10 +7,10 @@ import Navigation from '../components/navigation'
 import ProjectsSection from '../components/projects_section'
 import Footer from '../components/footer'
 import Showcase from '../components/showcase'
-import Contact from '../components/contact'
+import Contact from "../components/contact"
 
 // styles
-import '../assets/global.css'
+import '../assets/global.css';
 
 const IndexPage = () => {
   useEffect(() => {
