@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import Device from '../../devices-bpks';
+import styled from 'styled-components'
+import Device from '../../devices-bpks'
 
-const bg = '#F1F1F1';
-const text = '#131313';
+const bg = '#F1F1F1'
+const text = '#131313'
 
 export const Section = styled.section`
     padding: 2em;
@@ -16,15 +16,15 @@ export const Section = styled.section`
         font-family: "Poppins";
         text-transform: uppercase;
         
-        @media ${ Device.mobileL }{
+        @media ${Device.mobileL}{
             font-size: .9rem;
         }
     }
 
-    @media ${ Device.tablet }{
+    @media ${Device.tablet}{
         padding: 4em;
     }
-`;
+`
 
 export const Form = styled.form`
     display: block;
@@ -33,14 +33,14 @@ export const Form = styled.form`
     background-color: #F7F7F7;
     padding: 3em 0 0 0;
 
-    @media ${ Device.tablet }{
+    @media ${Device.tablet}{
         width: 50%;
     }
 
-    @media ${ Device.laptop }{
+    @media ${Device.laptop}{
         width: 50%;
     }
-`;
+`
 
 export const EmailField = styled.input`
     width: 100%;
@@ -62,10 +62,10 @@ export const EmailField = styled.input`
         color: ${text};
     }
 
-    @media ${ Device.mobileL }{
+    @media ${Device.mobileL}{
         font-size: 1rem;
     }
-`;
+`
 
 export const MessageField = styled.textarea`
     resize: vertical;
@@ -85,10 +85,10 @@ export const MessageField = styled.textarea`
     margin: 0 0 1.5em 0;
     border-bottom: 1px solid rgba(0,0,0, 5%);
 
-    @media ${ Device.mobileL }{
+    @media ${Device.mobileL}{
         font-size: 1rem;
     }
-`;
+`
 
 export const BtnSubmit = styled.button`
     text-align: center;
@@ -105,7 +105,7 @@ export const BtnSubmit = styled.button`
     outline: none;
     width: 100%;
 
-    @media ${ Device.mobileL }{
+    @media ${Device.mobileL}{
         font-size: 1rem;
     }
-`;
+`

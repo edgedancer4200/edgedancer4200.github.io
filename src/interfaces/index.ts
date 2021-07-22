@@ -14,7 +14,7 @@ export interface ProjectI {
             title: string;
             url: string;
         },
-        source_code: {
+        sourceCode: {
             title: string | undefined;
             url: string | undefined;
         }

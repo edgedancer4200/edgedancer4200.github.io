@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import Device from '../../devices-bpks';
+import styled from 'styled-components'
+import Device from '../../devices-bpks'
 
-const bg = '#333333';
+const bg = '#333333'
 
 export const Card = styled.div`
     position: relative;
@@ -10,8 +10,7 @@ export const Card = styled.div`
     text-align: center;
     padding: 2em;
     border-radius: 5px;
-`;
-
+`
 
 export const CardImg = styled.img`
     position: absolute;
@@ -21,8 +20,7 @@ export const CardImg = styled.img`
     width: 100%;
     height: 100%;
     border-radius: 5px;
-`;
-
+`
 
 export const CardLayout = styled.div`
     position: absolute;
@@ -65,7 +63,7 @@ export const CardLayout = styled.div`
                 }
             }
 
-            @media ${ Device.mobileM } {
+            @media ${Device.mobileM} {
                 flex-direction: row;
             }
         }
@@ -93,4 +91,4 @@ export const CardLayout = styled.div`
         }
     }
     
-`;
+`

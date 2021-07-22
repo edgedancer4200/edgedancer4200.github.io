@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import Device from '../../devices-bpks';
+import styled from 'styled-components'
+import Device from '../../devices-bpks'
 
-const link = '#131313';
+const link = '#131313'
 
 export const Section = styled.section`
     width: 100%;
@@ -29,7 +29,7 @@ export const Section = styled.section`
             margin-left: .3rem;
         }
 
-        @media ${ Device.tablet } {
+        @media ${Device.tablet} {
             width: 60% !important;
             padding: 2em !important;
             font-size: 1.6rem !important;
@@ -37,7 +37,7 @@ export const Section = styled.section`
         
     }
 
-    @media ${ Device.tablet } {
+    @media ${Device.tablet} {
         flex-direction: row;
     }
-`;
+`

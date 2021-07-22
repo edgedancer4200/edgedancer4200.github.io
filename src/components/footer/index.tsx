@@ -1,12 +1,12 @@
-import React from "react";
-import { Divisor, Info } from './styles';
-import { Link } from "gatsby";
+import React from 'react'
+import { Divisor, Info } from './styles'
+import { Link } from 'gatsby'
 
 // data
-import data from "../../../data.json";
+import data from '../../../data.json'
 
 const Footer: React.FC = () => {
-    return (
+  return (
         <Divisor>
             <Info>{ data.footer.main }</Info>
             <Info>{ data.footer.secondary }</Info>
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                 back to top
             </Link>
         </Divisor>
-    )
+  )
 }
 
 export default Footer

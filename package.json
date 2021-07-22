@@ -15,9 +15,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "type-check": "tsc --pretty --noEmit",
-    "prepare": "husky install",
-    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "lint:fix": "yarn lint --fix"
+    "lint": "eslint --ignore-path .gitignore . --ext \".ts,.tsx,.js,.jsx\"",
+    "lint:fix": "eslint --ignore-path .gitignore . --ext .ts,.tsx,.js,.jsx --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
@@ -52,7 +52,7 @@
     "prettier": "^2.3.2"
   },
   "lint-staged": {
-    "*.{js, ts, tsx}": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "**/*.{ts, tsx}": "eslint --cache --fix",
+    "**/*.{css,md}": "prettier --write"
   }
 }

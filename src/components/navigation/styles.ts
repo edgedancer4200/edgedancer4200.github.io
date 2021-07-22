@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import Device from '../../devices-bpks';
+import styled from 'styled-components'
+import Device from '../../devices-bpks'
 
-import { Link as GatsbyLink } from "gatsby";
+import { Link as GatsbyLink } from 'gatsby'
 
-const text = '#333333';
-const bg = '#F8F8F8';
+const text = '#333333'
+const bg = '#F8F8F8'
 
 export const Header = styled.span`
     width: 100%;
@@ -15,8 +15,7 @@ export const Header = styled.span`
     display: flex;
     position: absolute;
     background-color: ${bg};
-`;
-
+`
 
 // https://stackoverflow.com/questions/49639031/styled-components-with-gatsby-link-anchor-tag-css-coloring
 export const Logo = styled(GatsbyLink)`
@@ -33,11 +32,10 @@ export const Logo = styled(GatsbyLink)`
         margin-top: -5px;
     }
 
-    @media ${ Device.mobileL } {
+    @media ${Device.mobileL} {
         font-size: 1.3rem;
     }
-`;
-
+`
 
 export const Menu = styled.ul`
     margin-top: 1em;
@@ -54,4 +52,4 @@ export const Menu = styled.ul`
             font-size: 1rem;
         }
     }
-`;
+`

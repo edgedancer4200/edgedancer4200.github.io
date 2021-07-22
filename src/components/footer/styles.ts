@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import Device from '../../devices-bpks';
+import styled from 'styled-components'
+import Device from '../../devices-bpks'
 
-const bg = '#F1F1F1';
-const text = '#333333';
+const bg = '#F1F1F1'
+const text = '#333333'
 
 export const Divisor = styled.div`
     position: relative;
@@ -27,26 +27,25 @@ export const Divisor = styled.div`
         margin: 0 3em .5em 0;
         font-family: 'Poppins';
 
-        @media ${ Device.mobileL } {
+        @media ${Device.mobileL} {
             font-size: 1.3rem;
         }
     }
-`;
-
+`
 
 export const Info = styled.p`
     color: ${text};
     font-size: .7rem;
 
-    @media ${ Device.mobileS } {
+    @media ${Device.mobileS} {
         font-size: .8rem;
     }
 
-    @media ${ Device.mobileM } {
+    @media ${Device.mobileM} {
         font-size: .9rem;
     }
 
-    @media ${ Device.tablet }{
+    @media ${Device.tablet}{
         font-size: 1rem;
     }
-`;
+`

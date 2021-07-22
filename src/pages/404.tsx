@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "gatsby"
-
+import React from 'react'
+import { Link } from 'gatsby'
 
 const FourOhFour: React.FC = () => {
   return (

@@ -1,14 +1,12 @@
-import React from 'react';
-import LazyLoad from 'react-lazyload';
-import { Card, CardImg, CardLayout } from './styles';
+import React from 'react'
+import LazyLoad from 'react-lazyload'
+import { Card, CardImg, CardLayout } from './styles'
 
 // interfaces
-import { ProjectI } from '../../interfaces';
-
+import { ProjectI } from '../../interfaces'
 
 const ProjectCard: React.FC<{ project: ProjectI }> = ({ project }) => {
-
-    return (
+  return (
         <Card>
             <LazyLoad>
                 <CardImg src={ project.img.url } alt={ project.img.alt } />
@@ -31,7 +29,7 @@ const ProjectCard: React.FC<{ project: ProjectI }> = ({ project }) => {
                 </div>
             </CardLayout>
         </Card>
-    )
+  )
 }
 
 export default ProjectCard

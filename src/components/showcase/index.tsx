@@ -1,9 +1,9 @@
-import * as React from "react"
-import { Link } from "gatsby";
-import { Section } from "./styles"
+import * as React from 'react'
+import { Link } from 'gatsby'
+import { Section } from './styles'
 
 // data
-import data from '../../../data.json';
+import data from '../../../data.json'
 
 const Showcase: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Showcase: React.FC = () => {
         <p>
           { data.header.secondary }
           <br/>
-          <span style={{marginTop: '10px'}}>
+          <span style={{ marginTop: '10px' }}>
             Got an interest project in mind?
             <Link to="#contact">
               Let's talk.

@@ -1,41 +1,41 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import { default as Layout } from 'react-masonry-css';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { default as Layout } from 'react-masonry-css' // eslint-disable-line
 
 // components
-import ProjectCard from '../project_card';
+import ProjectCard from '../project_card'
 
 // styles
-import { Section } from './styles';
-import './masonry-styles.css';
+import { Section } from './styles'
+import './masonry-styles.css'
 
 // config
-import { LIST_PRJ } from '../../config';
+import { LIST_PRJ } from '../../config'
 
 // interfaces
-import { ProjectI } from '../../interfaces';
+import { ProjectI } from '../../interfaces'
 
 // react-masonry-css params
 const breakpointColumns = {
-    default: 2,
-    1100: 2,
-    700: 2,
-    600: 1
-};
+  default: 2,
+  1100: 2,
+  700: 2,
+  600: 1
+}
 
 const ProjectsSection: React.FC = () => {
-    const [prj, setPrj] = useState<ProjectI[]>([]);
+  const [prj, setPrj] = useState<ProjectI[]>([])
 
-    useEffect(() => {
-        fetchPRJ();
-    }, []);
+  const fetchPRJ = async () => {
+    const res: any = await axios.get(LIST_PRJ)
+    if (res) setPrj(res.data)
+  }
 
-    const fetchPRJ = async () => {
-        const res: any = await axios.get(LIST_PRJ);
-        if (res) setPrj(res.data);
-    }
+  useEffect(() => {
+    fetchPRJ()
+  }, [])
 
-    return (
+  return (
         <Section id="projects">
             <h3>
                 a collection of selected work
@@ -50,7 +50,7 @@ const ProjectsSection: React.FC = () => {
             }
             </Layout>
         </Section>
-    )
+  )
 }
 
 export default ProjectsSection

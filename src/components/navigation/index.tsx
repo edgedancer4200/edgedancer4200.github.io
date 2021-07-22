@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { Link } from 'gatsby'
 
 // styles
-import { Header, Menu, Logo } from './styles';
+import { Header, Menu, Logo } from './styles'
 
 // data
-import data from '../../../data.json';
+import data from '../../../data.json'
 
 const Navigation: React.FC = () => {
-    return (
+  return (
         <Header>
             <Logo to="/" aria-label="logo">
                 { data.logo.main }
@@ -34,7 +34,7 @@ const Navigation: React.FC = () => {
                 </li>
             </Menu>
         </Header>
-    )
+  )
 }
 
 export default Navigation
