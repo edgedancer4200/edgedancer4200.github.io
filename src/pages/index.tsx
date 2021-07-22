@@ -14,8 +14,8 @@ import '../assets/global.css'
 
 const IndexPage = () => {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
