@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import emailjs from 'emailjs-com'
 
 // styles
 import { Section, Form, EmailField, MessageField, BtnSubmit } from './styles'
+
+// local
+import { response } from './actions'
+
+// interfaces
+import { MessageI } from '../../interfaces'
 
 const dflFields = {
   email: '',
@@ -10,16 +15,16 @@ const dflFields = {
 }
 
 const Contact: React.FC = () => {
-  const [emailSent, setEmailSent] = useState<boolean>(false)
-  const [fields, setFields] = useState(dflFields)
+  const [emailRes, setEmailRes] = useState<string>('')
+  const [fields, setFields] = useState<MessageI>(dflFields)
 
   useEffect(() => {
-    if (emailSent) setFields(dflFields)
-  }, [emailSent])
+    if (emailRes === response.success) setFields(dflFields)
+  }, [setEmailRes])
 
-  // utilities module dynamically imported when required
+  // actions module dynamically imported when required
   useEffect(() => {
-    if (fields.message) { import('./utilities').then(_module => _module.handletextareaInput()) }
+    if (fields.message) import('./actions').then(_module => _module.handletextareaInput())
   }, [fields.message])
 
   const _handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setFields({ ...fields, [e.target.name]: e.target.value })
@@ -27,11 +32,17 @@ const Contact: React.FC = () => {
   const _handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault()
 
-    setEmailSent(false)
+    setEmailRes('')
 
-    emailjs.send(process.env.SERVICE_ID, process.env.TEMPLATE_ID, fields, process.env.USERID)
-      .then((_: any) => setEmailSent(true))
-      .catch(err => console.error(err))
+    // actions module dynamically imported when required
+    import('./actions').then(async (_module) => {
+      const res = await _module.sendMessage(setEmailRes, fields)
+      console.log('response =>', res)
+      if (res !== false) {
+        console.log('res =>', res)
+        setFields(dflFields)
+      }
+    })
   }
 
   return (
@@ -40,7 +51,6 @@ const Contact: React.FC = () => {
                 I&lsquo;m open to discuss your project. Let&lsquo;s work together.
             </h3>
             <Form onSubmit={ _handleSubmit }>
-                {/* Email */}
                 <EmailField
                     type="text"
                     name="email"
@@ -49,7 +59,6 @@ const Contact: React.FC = () => {
                     spellCheck={ false }
                     onChange={ (e: React.ChangeEvent<HTMLInputElement>) => _handleChange(e) }
                 />
-                {/* Message */}
                 <MessageField
                     type="text"
                     name="message"
@@ -59,8 +68,8 @@ const Contact: React.FC = () => {
                     onChange={ (e: React.ChangeEvent<HTMLInputElement>) => _handleChange(e) }
                 >
                 </MessageField>
-                <span id="message_sent" style={{ display: emailSent ? 'block' : 'none', margin: '0 0 2em 1em' }}>
-                    Your message has been sent.
+                <span id="res_message" style={{ display: emailRes ? 'block' : 'none', margin: '0 0 2em 1em' }}>
+                    { emailRes }.
                 </span>
                 <BtnSubmit>
                     send
