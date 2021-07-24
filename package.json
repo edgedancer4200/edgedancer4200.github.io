@@ -18,7 +18,9 @@
     "lint": "eslint --ignore-path .gitignore . --ext \".ts,.tsx,.js,.jsx\"",
     "lint:fix": "eslint --ignore-path .gitignore . --ext .ts,.tsx,.js,.jsx --fix",
     "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "test": "jest --env=jsdom",
+    "test:watch": "test -- --watch"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
@@ -30,6 +32,7 @@
     "gatsby-plugin-styled-components": "^4.9.0",
     "gatsby-plugin-typescript": "^3.9.0",
     "gh-pages": "^3.2.3",
+    "jest": "^27.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
@@ -40,8 +43,14 @@
     "typescript": "^4.3.5"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^26.0.24",
+    "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
+    "babel-jest": "^27.0.6",
+    "babel-preset-gatsby": "^1.10.0",
     "eslint": "^7.31.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
@@ -49,11 +58,19 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0",
     "husky": "^4.3.8",
+    "identity-obj-proxy": "^3.0.0",
     "lint-staged": "^10.5.3",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "react-test-renderer": "^17.0.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["npm run lint:fix", "git add"],
-    "{*.{json,md}}": ["prettier --write", "git add"]
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix",
+      "git add"
+    ],
+    "{*.{json,md}}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
