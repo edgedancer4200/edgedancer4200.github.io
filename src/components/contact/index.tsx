@@ -16,6 +16,7 @@ const dflFields = {
 
 const Contact: React.FC = () => {
   const [emailRes, setEmailRes] = useState<string>('')
+  const [submiting, setSubmitting] = useState(false)
   const [fields, setFields] = useState<MessageI>(dflFields)
 
   useEffect(() => {
@@ -32,16 +33,16 @@ const Contact: React.FC = () => {
   const _handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault()
 
+    setSubmitting(true)
     setEmailRes('')
 
     // actions module dynamically imported when required
     import('./actions').then(async (_module) => {
-      const res = await _module.sendMessage(setEmailRes, fields)
-      console.log('response =>', res)
-      if (res !== false) {
-        console.log('res =>', res)
-        setFields(dflFields)
-      }
+      const res = await _module.sendMessage(fields)
+
+      if (res[1] !== false) setFields(dflFields)
+      setEmailRes(res[0])
+      setSubmitting(false)
     })
   }
 
@@ -71,8 +72,8 @@ const Contact: React.FC = () => {
                 <span id="res_message" style={{ display: emailRes ? 'block' : 'none', margin: '0 0 2em 1em' }}>
                     { emailRes }.
                 </span>
-                <BtnSubmit>
-                    send
+                <BtnSubmit disabled={ submiting }>
+                    send message
                 </BtnSubmit>
             </Form>
         </Section>

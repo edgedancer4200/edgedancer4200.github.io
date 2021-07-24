@@ -1,4 +1,3 @@
-import React from 'react'
 import emailjs from 'emailjs-com'
 
 // interfaces
@@ -10,25 +9,19 @@ export const response: { [key: string]: string } = {
   failed_params: 'There was an error: You must fill in the form'
 }
 
-export const sendMessage = (
-  setState: React.Dispatch<React.SetStateAction<string>>,
-  data: MessageI
-): Promise<boolean> => {
+export const sendMessage = (data: MessageI): Promise<[string, boolean]> => {
   return new Promise(resolve => {
     if (!data.email || !data.message) {
-      setState(response.failed_params)
-      resolve(false)
+      resolve([response.failed_params, false])
     } else {
       // @ts-ignore -- this ignores data type parameter for emailjs send func
       emailjs.send(process.env.SERVICE_ID, process.env.TEMPLATE_ID, data, process.env.USERID)
         .then(_ => {
-          setState(response.success)
-          resolve(true)
+          resolve([response.success, true])
         })
         .catch(err => {
           console.error(err)
-          setState(response.failed)
-          resolve(false)
+          resolve([response.failed, false])
         })
     }
   })
