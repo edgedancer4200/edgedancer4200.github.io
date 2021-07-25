@@ -15,17 +15,10 @@ body {
 }
 
 
-@font-face {
-    font-family: 'Monument';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Monument'), url('./fonts/MonumentExtended-Regular.otf') format('truetype');
-}
-
-
 body {
     display: flex;
     flex-direction: column;
-    font-family: 'Monument';
-    background-color: #F8F8F8;
+    font-family: 'Poppins';
+    background-color: #090809;
+    color: #BAC4B8;
 }
