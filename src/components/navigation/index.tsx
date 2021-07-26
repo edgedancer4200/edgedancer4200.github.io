@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'react-scroll'
 
 // styles
-import { Header, Menu, Logo } from './styles'
+import { Header, Menu, Logo } from './style'
 
 // data
 import data from '../../../data.json'
@@ -18,17 +18,17 @@ const Navigation: React.FC = () => {
             </Logo>
             <Menu>
                 <li>
-                    <Link to="#resume">
+                    <Link to="resume" smooth={true}>
                         Resume
                     </Link>
                 </li>
                 <li>
-                    <Link to="#projects">
+                    <Link to="projects" smooth={true}>
                         Projects
                     </Link>
                 </li>
                 <li>
-                    <Link to="#contact">
+                    <Link to="contact" smooth={true}>
                         Contact me
                     </Link>
                 </li>

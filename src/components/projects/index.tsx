@@ -1,19 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 import { default as Layout } from 'react-masonry-css' // eslint-disable-line
 
 // components
 import ProjectCard from '../project_card'
 
 // styles
-import { Section } from './styles'
+import { Section } from './style'
 import './masonry-styles.css'
 
 // config
-import { LIST_PRJ } from '../../config'
-
-// interfaces
-import { ProjectI } from '../../interfaces'
+import data from '../../../data.json'
 
 // react-masonry-css params
 const breakpointColumns = {
@@ -24,17 +20,6 @@ const breakpointColumns = {
 }
 
 const ProjectsSection: React.FC = () => {
-  const [prj, setPrj] = useState<ProjectI[]>([])
-
-  const fetchPRJ = async () => {
-    const res: any = await axios.get(LIST_PRJ)
-    if (res) setPrj(res.data)
-  }
-
-  useEffect(() => {
-    fetchPRJ()
-  }, [])
-
   return (
         <Section id="projects">
             <h3>
@@ -46,7 +31,7 @@ const ProjectsSection: React.FC = () => {
             columnClassName="my-masonry-grid_column"
             >
             {
-                prj.map((project, idx) => <ProjectCard project={project} key={idx} />)
+                data.projects.map((project, idx) => <ProjectCard project={project} key={idx} />)
             }
             </Layout>
         </Section>

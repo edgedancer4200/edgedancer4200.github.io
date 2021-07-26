@@ -3,8 +3,7 @@ import Device from '../../devices-bpks'
 
 import { Link as GatsbyLink } from 'gatsby'
 
-const text = '#333333'
-const bg = '#F8F8F8'
+const text = '#BAC4B8'
 
 export const Header = styled.span`
     width: 100%;
@@ -14,7 +13,6 @@ export const Header = styled.span`
     top: 0;
     display: flex;
     position: absolute;
-    background-color: ${bg};
 `
 
 // https://stackoverflow.com/questions/49639031/styled-components-with-gatsby-link-anchor-tag-css-coloring
@@ -44,12 +42,14 @@ export const Menu = styled.ul`
     
     & li {
         display: inline-block;
-        margin-right: 1.2em;
+        margin-right: 35px;
 
         & a {
             text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
             color: ${text};
-            font-size: 1rem;
+            cursor: pointer;
         }
     }
 `

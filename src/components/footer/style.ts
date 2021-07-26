@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import Device from '../../devices-bpks'
 
-const bg = '#F1F1F1'
-const text = '#333333'
+const text = '#BAC4B8'
 
 export const Divisor = styled.div`
     position: relative;
@@ -15,12 +14,12 @@ export const Divisor = styled.div`
     justify-content: center;
     padding: 3em 0 2em 0;
     margin: 0;
-    color: ${bg};
 
     & a {
         position: absolute;
         bottom: 0;
         right: 0;
+        cursor: pointer;
         text-decoration: None;
         color: ${text};
         font-size: 1.7rem;

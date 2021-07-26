@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import Device from '../../devices-bpks'
 
-const bg = '#F1F1F1'
-const text = '#131313'
+const bg = '#21212C'
+const text = '#BAC4B8'
 
 export const Section = styled.section`
     padding: 2em;
+    margin-bottom: 6em;
     display: flex;
+    min-height: 40vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -30,7 +32,7 @@ export const Form = styled.form`
     display: block;
     height: auto;
     width: 100%;
-    background-color: #F7F7F7;
+    background-color: transparent;
     padding: 3em 0 0 0;
 
     @media ${Device.tablet}{
@@ -52,14 +54,14 @@ export const EmailField = styled.input`
     width: 96%;
     font-family: 'Poppins';
     font-size: .8rem;
-    color: #121212;
+    color: ${text};
     font-weight: 600;
     margin: 0 0 1.5em 0;
     background: transparent;
     border-bottom: 1px solid rgba(0,0,0, 5%);
 
     &::placeholder {
-        color: ${text};
+        color: ${bg};
     }
 
     @media ${Device.mobileL}{
@@ -77,13 +79,17 @@ export const MessageField = styled.textarea`
     font-size: .8rem;
     height: .5em;
     background: transparent;
-    color: #121212;
+    color: ${text};
     font-weight: 600;
     overflow-y: hidden;
     border: none;
     outline: none;
     margin: 0 0 1.5em 0;
     border-bottom: 1px solid rgba(0,0,0, 5%);
+
+    &::placeholder {
+        color: ${bg};
+    }
 
     @media ${Device.mobileL}{
         font-size: 1rem;
@@ -94,9 +100,9 @@ export const BtnSubmit = styled.button`
     text-align: center;
     text-transform: uppercase;
     font-weight: 800;
-    background-color: ${text};
+    background-color: ${bg};
     font-family: 'Poppins';
-    color: ${bg};
+    color: ${text};
     cursor: pointer;
     border-radius: 2px;
     padding: .8em 1em;

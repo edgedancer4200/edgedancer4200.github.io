@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
+import data from '../../../data.json'
+
 // styles
-import { Section, Form, EmailField, MessageField, BtnSubmit } from './styles'
+import { Section, Form, EmailField, MessageField, BtnSubmit } from './style'
 
 // local
 import { response } from './actions'
@@ -49,7 +51,7 @@ const Contact: React.FC = () => {
   return (
         <Section id="contact">
             <h3>
-                I&lsquo;m open to discuss your project. Let&lsquo;s work together.
+                { data.contact.content }
             </h3>
             <Form onSubmit={ _handleSubmit }>
                 <EmailField

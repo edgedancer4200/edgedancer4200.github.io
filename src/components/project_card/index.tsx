@@ -1,6 +1,6 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
-import { Card, CardImg, CardLayout } from './styles'
+import { Card, CardImg, CardLayout } from './style'
 
 // interfaces
 import { ProjectI } from '../../interfaces'
