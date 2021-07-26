@@ -23,7 +23,7 @@ const IndexPage = () => {
       <Helmet htmlAttributes={{ lang: 'en' }}>
         <meta name="description" content="Luis Barrios, developer" charSet="utf-8"/>
         <title>
-        ॐ Carlos Barrios, developer
+        Carlos Barrios, developer
         </title>
       </Helmet>
 
